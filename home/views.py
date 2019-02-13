@@ -15,5 +15,5 @@ def dinner(request):
     pick = random.choice(menus)
 
     # return HttpResponse(one)
-    return HttpResponse(request, 'dinner.html', {'menus': menus, 'pick': pick})
+    return render(request, 'dinner.html', {'menus': menus, 'pick': pick})
 
