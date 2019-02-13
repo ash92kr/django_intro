@@ -18,6 +18,7 @@ from django.urls import path
 from home import views
 
 urlpatterns = [
+    path('home/dinner/', views.dinner, name='dinner'),
     path('home/index/', views.index, name='index'),   # 최근에 만든 것을 계속해서 위로 쌓아나감, 가장 마지막 url을 /로 붙여야 한다
     path('admin/', admin.site.urls),
 ]
