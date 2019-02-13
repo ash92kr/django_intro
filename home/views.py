@@ -26,3 +26,26 @@ def cube(request, num):
     num3 = int(num) ** 3
     return render(request, 'cube.html', {'num': num, 'num3': num3})
 
+
+def ping(request):
+    return render(request, 'ping.html')
+    
+def pong(request):
+    print(request.GET)
+    data = request.GET.get('data')   # 딕셔너리로 값을 보내고 받음
+    return render(request, 'pong.html', {'data': data})
+    
+    
+def user_new(request):
+    return render(request, 'user_new.html')
+    
+def user_create(request):
+    nickname = request.POST.get('nickname')
+    pwd = request.POST.get('pwd')
+    return render(request, 'user_create.html', {'nickname': nickname, 'pwd': pwd})
+    
+    
+    
+    
+    
+    
