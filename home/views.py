@@ -17,3 +17,12 @@ def dinner(request):
     # return HttpResponse(one)
     return render(request, 'dinner.html', {'menus': menus, 'pick': pick})
 
+
+def hello(request, name):
+    return render(request, 'hello.html', {'name': name})
+
+
+def cube(request, num):
+    num3 = int(num) ** 3
+    return render(request, 'cube.html', {'num': num, 'num3': num3})
+
