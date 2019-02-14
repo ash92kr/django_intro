@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('utilities/', include('utilities.urls')),
     path('home/', include('home.urls')),   # 홈에 있는 url 폴더를 보겠다
     path('admin/', admin.site.urls),
 ]
