@@ -14,19 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from home import views
+from django.urls import path, include
 
 urlpatterns = [
-    path('home/static_example/', views.static_example, name='static_example'),
-    path('home/template_example', views.template_example, name='template_example'),
-    path('home/user_create/', views.user_create, name='user_create'),
-    path('home/user_new/', views.user_new, name='user_new'),
-    path('home/pong/', views.pong, name='pong'),
-    path('home/ping/', views.ping, name='ping'),
-    path('home/cube/<num>', views.cube, name='cube'),
-    path('home/hello/<name>/', views.hello, name='hello'),
-    path('home/dinner/', views.dinner, name='dinner'),
-    path('home/index/', views.index, name='index'),   # 최근에 만든 것을 계속해서 위로 쌓아나감, 가장 마지막 url을 /로 붙여야 한다
+    path('home/', include('home.urls')),   # 홈에 있는 url 폴더를 보겠다
     path('admin/', admin.site.urls),
 ]
