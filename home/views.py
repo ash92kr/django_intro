@@ -1,13 +1,15 @@
 from django.shortcuts import render, HttpResponse
 from pprint import pprint
 import random
+from datetime import datetime
 
 # Create your views here.
 def index(request):   # 장고에서는 뷰 함수의 인자에 항상 request를 넣어야 한다
     # print(request)
     # print(type(request))
     # pprint(request.META)
-    return HttpResponse('Welcome to Django!')
+    # return HttpResponse('Welcome to Django!')
+    return render(request, 'index.html')
 
 def dinner(request):
     
@@ -45,7 +47,15 @@ def user_create(request):
     return render(request, 'user_create.html', {'nickname': nickname, 'pwd': pwd})
     
     
-    
-    
-    
+def template_example(request):
+    my_list = ['치킨', '피자', '간짜장', '생맥주', '돈까스']
+    my_sentence = 'Life is short, you need python'
+    messages = ['apple', 'banana', 'orange', 'coconut']
+    empty_list = []
+    datetimenow = datetime.now()
+    return render(request, 'template_example.html',
+                  {'my_list': my_list, 'my_sentence': my_sentence,
+                   'messages': messages, 'empty_list': empty_list,
+                   'datetimenow': datetimenow
+                  })
     
